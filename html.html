@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trio Resume Generator</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Resume Generator</h1>
+	<p><hr>
+	<hr></p>
+    <form id="resume-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+      <label for="github">Github</label>
+		<input type="url" id="github" name="github" pattern="https?://.*" title="Please enter a valid URL starting with http:// or https://">      
+		<label for="linkedin">LinkedIn</label>
+		<input type="url" id="linkedln" name="linkedln" pattern="https?://.*" title="Please enter a valid URL starting with http:// or https://">
+
+      <label for="photo">Photo</label>
+      <input type="file" id="photo" accept="image/*" onchange="previewPhoto()">
+      <button type="submit">Generate Resume</button>
+    </form>
+    <div id="resume-preview"></div>
+    <button id="download-pdf" disabled>Download PDF</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
